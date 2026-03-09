@@ -9,10 +9,8 @@
     <u><h1>My Blog</h1></u>
     {% for blogs in blog %}
     <h2>{{ blogs.title }}</h2>
-    <p>{{ blogs.description }}</p>
-    {% if blog.date %}
     <h4>{{ blog.date }}</h4>
-    {% endif %}
+    <p>{{ blogs.description }}</p>
     {% endfor %}
 </body>
 </html>
