@@ -6,11 +6,12 @@
     <title>Blog</title>
 </head>
 <body>
-    <u><h1>My Blog</h1></u>
-    {% for blogs in blog %}
-    <h2>{{ blogs.title }}</h2>
-    <h4>{{ blog.date }}</h4>
-    <p>{{ blogs.description }}</p>
+    <h1>Akshay's Blogs</h1>
+    <h3>Akshay has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
+    {% for blogs in blogs %}
+    <a href="{% url 'blog:detail' blogs.id %}"><h2>{{ blogs.title }}</h2></a>
+    <h6>{{ blogs.date | date:'d M Y'|upper }}</h6>
+    <p>{{ blogs.description|truncatechars:100 }}</p>
     {% endfor %}
 </body>
 </html>
