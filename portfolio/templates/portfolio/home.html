@@ -1,3 +1,5 @@
+{% extends 'portfolio/base.html' %} 
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +8,9 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Nick's Portfolio!!</h1>
-    {% load static %}
+      
+    {% block content %}
+    <h1>Akshay's Portfolio!!</h1>
     <a href="{% url 'blog:all_blogs' %}">Blog</a> <br>
     <a href="{% static 'portfolio/Resume_CSV.pdf' %}">Resume</a><br>
     <img src="{% static 'portfolio/Profile.jpg' %}" alt="">
@@ -19,5 +22,6 @@
     <br><a href="{{ project.url }}">Link</a>
     {% endif %}
     {% endfor %}
+    {% endblock %}
 </body>
 </html>

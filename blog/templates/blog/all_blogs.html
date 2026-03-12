@@ -6,6 +6,8 @@
     <title>Blog</title>
 </head>
 <body>
+    {% extends 'portfolio/base.html' %}   
+    {% block content %}
     <h1>Akshay's Blogs</h1>
     <h3>Akshay has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h3>
     {% for blogs in blogs %}
@@ -13,5 +15,6 @@
     <h6>{{ blogs.date | date:'d M Y'|upper }}</h6>
     <p>{{ blogs.description|truncatechars:100 }}</p>
     {% endfor %}
+    {% endblock %}
 </body>
 </html>
